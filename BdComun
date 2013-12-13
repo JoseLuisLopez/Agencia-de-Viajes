@@ -1,0 +1,18 @@
+using System;
+using MySql.Data.MySqlClient;
+
+
+namespace ConexionCSharpconMySQL
+{
+	
+	public class BdComun
+	{
+		public static MySqlConnection ObtenerConexion()
+       {
+           MySqlConnection conectar = new MySqlConnection("server=127.0.0.1; database=Agencia; Uid=root; pwd=;");
+               conectar.Open();
+               return conectar;        
+
+       }
+	}
+}
