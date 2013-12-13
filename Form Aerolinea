@@ -1,0 +1,61 @@
+using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace ConexionCSharpconMySQL
+{
+	/// <summary>
+	/// Description of Aerolineas.
+	/// </summary>
+	public partial class Aerolineas : Form
+	{
+		public Aerolineas()
+		{
+			//
+			// The InitializeComponent() call is required for Windows Forms designer support.
+			//
+			InitializeComponent();
+			
+			//
+			// TODO: Add constructor code after the InitializeComponent() call.
+			//
+		}
+		
+		void BtnGuardarAerolineaClick(object sender, EventArgs e)
+		{
+			Aerolinea pAerolinea = new Aerolinea();
+			pAerolinea.id_Vuelos = txtIdAerolinea.Text.Trim();
+			pAerolinea.NombreEmpresa = txtNomEmprAerolinea.Text.Trim();
+			pAerolinea.TiposVuelo = txtTipoVueloAerolinea.Text.Trim();
+			pAerolinea.Privado = txtPrivadoAerolinea.Text.Trim();
+			pAerolinea.Dias = cbDiasAerolinea.Text.Trim();
+			pAerolinea.Horarios = cbHorarioAerolinea.Text.Trim();
+			
+				int resultado = ClientesDAL.Agregar(pAerolinea);
+			if (resultado > 0)
+			{
+				MessageBox.Show("Registro Guardado Con Exito!!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			}
+			else
+			{
+				MessageBox.Show("No se pudo guardar el Registro", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+			}
+		}
+			
+		
+		
+		void BtnRegresarAerolineaClick(object sender, EventArgs e)
+		{
+			this.Close();
+		}
+		
+		void BtnLimpiarAeroClick(object sender, EventArgs e)
+		{
+			txtIdAerolinea.Clear();
+			txtNomEmprAerolinea.Clear();
+			txtTipoVueloAerolinea.Clear();
+			txtPrivadoAerolinea.Clear();
+			
+		}
+	}
+}
