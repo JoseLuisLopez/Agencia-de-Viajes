@@ -1,0 +1,31 @@
+using System;
+
+namespace ConexionCSharpconMySQL
+{
+	/// <summary>
+	/// Description of Aerolinea.
+	/// </summary>
+	public class Aerolinea
+	{
+		
+			 public string id_Vuelos { get; set; }
+        public string NombreEmpresa { get; set; }
+        public string TiposVuelo { get; set; }
+        public string Privado { get; set; }
+        public string Dias { get; set; }
+        public string Horarios { get; set; }
+
+
+        public Aerolinea() { }
+
+        public Aerolinea(string pid_Vuelos, string pNombreEmpresa, string pTiposVuelo, string pPrivado, string pDias, string pHorarios)
+        {
+            this.id_Vuelos = pid_Vuelos;
+            this.NombreEmpresa = pNombreEmpresa;
+            this.TiposVuelo = pTiposVuelo;
+            this.Privado = pPrivado;
+            this.Dias = pDias;
+            this.Horarios = pHorarios;
+        }
+		}
+	}
